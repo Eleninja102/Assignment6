@@ -7,6 +7,41 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Frame Content="Frame" Margin="0,0,480,0"/>
+        <ComboBox HorizontalAlignment="Left" Margin="599,36,0,0" VerticalAlignment="Top" Width="169"/>
+        <Label Content="Choose Flight:" HorizontalAlignment="Left" Margin="503,34,0,0" VerticalAlignment="Top"/>
+        <Label Content="Choose Passenger:" HorizontalAlignment="Left" Margin="479,85,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="599,87,0,0" VerticalAlignment="Top" Width="169" IsEnabled="False"/>
+        <Label Content="Passenger's Seat:" HorizontalAlignment="Left" Margin="488,132,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="599,140,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="169"/>
+        <GroupBox Header="Color Key" Margin="503,228,10,10">
+            <Grid>
+                <Label Content="Seat is Empty" HorizontalAlignment="Left" Margin="82,18,0,0" VerticalAlignment="Top" FontSize="16"/>
+                <RichTextBox Margin="10,63,0,0" Background="Red" Height="47" HorizontalAlignment="Left" Width="47" VerticalAlignment="Top">
+                    <FlowDocument>
+                        <Paragraph>
+                            <Run/>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+                <RichTextBox Margin="10,10,0,0" Background="#FF0050FF" Height="47" Width="47" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <FlowDocument>
+                        <Paragraph>
+                            <Run/>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+                <RichTextBox Margin="10,116,0,0" Background="#FF54FF00" Height="47" HorizontalAlignment="Left" Width="47" VerticalAlignment="Top">
+                    <FlowDocument>
+                        <Paragraph>
+                            <Run/>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+                <Label Content="Seat is Taken" HorizontalAlignment="Left" Margin="82,0,0,0" VerticalAlignment="Center" FontSize="16"/>
+                <Label Content="Selected Passenger Seat" HorizontalAlignment="Left" Margin="82,124,0,0" VerticalAlignment="Top" FontSize="16"/>
+            </Grid>
+        </GroupBox>
 
     </Grid>
 </Window>
