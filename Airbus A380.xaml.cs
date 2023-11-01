@@ -16,16 +16,13 @@ using System.Windows.Shapes;
 namespace Assignment6
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Airbus_A380.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Airbus_A380 : Page
     {
-        planeControl x;
-        public MainWindow()
+        public Airbus_A380()
         {
             InitializeComponent();
-            x = new planeControl();
-
         }
     }
 }

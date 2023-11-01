@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Frame Content="Frame" Margin="0,0,480,0"/>
+        <Frame Content="Frame" Margin="0,0,346,0"/>
         <ComboBox HorizontalAlignment="Left" Margin="599,36,0,0" VerticalAlignment="Top" Width="169"/>
         <Label Content="Choose Flight:" HorizontalAlignment="Left" Margin="503,34,0,0" VerticalAlignment="Top"/>
         <Label Content="Choose Passenger:" HorizontalAlignment="Left" Margin="479,85,0,0" VerticalAlignment="Top"/>
