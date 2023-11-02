@@ -7,7 +7,66 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="456" Width="818">
     <Grid>
-        <Frame x:Name="frameSeatLayout" Content="Frame" Margin="0,0,346,0"/>
+        <Grid x:Name="gdSeatLayoutBoeing767" Margin="0,0,346,0" Visibility="Hidden">
+            <Label x:Name="lbBoeing767Seat1" Content="1" HorizontalAlignment="Left" Margin="25,50,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat2" Content="2" HorizontalAlignment="Left" Margin="86,50,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat3" Content="3" HorizontalAlignment="Left" Margin="199,50,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat4" Content="4" HorizontalAlignment="Left" Margin="260,50,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat5" Content="5" HorizontalAlignment="Left" Margin="25,110,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat6" Content="6" HorizontalAlignment="Left" Margin="86,110,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat7" Content="7" HorizontalAlignment="Left" Margin="199,110,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat8" Content="8" HorizontalAlignment="Left" Margin="260,110,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat9" Content="9" HorizontalAlignment="Left" Margin="25,170,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat10" Content="10" HorizontalAlignment="Left" Margin="86,170,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat11" Content="11" HorizontalAlignment="Left" Margin="199,170,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat12" Content="12" HorizontalAlignment="Left" Margin="260,170,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat13" Content="13" HorizontalAlignment="Left" Margin="25,230,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat14" Content="14" HorizontalAlignment="Left" Margin="86,230,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat15" Content="15" HorizontalAlignment="Left" Margin="199,230,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat16" Content="16" HorizontalAlignment="Left" Margin="260,230,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat17" Content="17" HorizontalAlignment="Left" Margin="25,290,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat18" Content="18" HorizontalAlignment="Left" Margin="86,290,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat19" Content="19" HorizontalAlignment="Left" Margin="199,290,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat20" Content="20" HorizontalAlignment="Left" Margin="260,290,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat21" Content="21" HorizontalAlignment="Left" Margin="25,350,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat22" Content="22" HorizontalAlignment="Left" Margin="86,350,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat23" Content="23" HorizontalAlignment="Left" Margin="199,350,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbBoeing767Seat24" Content="24" HorizontalAlignment="Left" Margin="260,350,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+        </Grid>
+        <Grid x:Name="gdSeatLayoutAirbusA380" Margin="0,0,346,0" Visibility="Hidden">
+            <Label x:Name="lbAirbusA380Seat1" Content="1" HorizontalAlignment="Left" Margin="25,50,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat2" Content="2" HorizontalAlignment="Left" Margin="115,50,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat3" Content="3" HorizontalAlignment="Left" Margin="179,50,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat4" Content="4" HorizontalAlignment="Left" Margin="240,50,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat5" Content="5" HorizontalAlignment="Left" Margin="330,50,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat6" Content="6" HorizontalAlignment="Left" Margin="25,110,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat7" Content="7" HorizontalAlignment="Left" Margin="115,110,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat8" Content="8" HorizontalAlignment="Left" Margin="179,110,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat9" Content="9" HorizontalAlignment="Left" Margin="240,110,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat10" Content="10" HorizontalAlignment="Left" Margin="330,110,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat11" Content="11" HorizontalAlignment="Left" Margin="25,170,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat12" Content="12" HorizontalAlignment="Left" Margin="115,170,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat13" Content="13" HorizontalAlignment="Left" Margin="179,170,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat14" Content="14" HorizontalAlignment="Left" Margin="240,170,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat15" Content="15" HorizontalAlignment="Left" Margin="330,170,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat16" Content="16" HorizontalAlignment="Left" Margin="25,230,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat17" Content="17" HorizontalAlignment="Left" Margin="115,230,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat18" Content="18" HorizontalAlignment="Left" Margin="179,230,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat19" Content="19" HorizontalAlignment="Left" Margin="240,230,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat20" Content="20" HorizontalAlignment="Left" Margin="330,230,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat21" Content="21" HorizontalAlignment="Left" Margin="25,290,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat22" Content="22" HorizontalAlignment="Left" Margin="115,290,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat23" Content="23" HorizontalAlignment="Left" Margin="179,290,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat24" Content="24" HorizontalAlignment="Left" Margin="240,290,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat25" Content="25" HorizontalAlignment="Left" Margin="330,290,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat26" Content="26" HorizontalAlignment="Left" Margin="25,350,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat27" Content="27" HorizontalAlignment="Left" Margin="115,350,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat28" Content="28" HorizontalAlignment="Left" Margin="179,350,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat29" Content="29" HorizontalAlignment="Left" Margin="240,350,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lbAirbusA380Seat30" Content="30" HorizontalAlignment="Left" Margin="330,350,0,0" VerticalAlignment="Top" Background="White" Width="40" Height="40" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        </Grid>
+
         <ComboBox x:Name="cbFlightInfo" HorizontalAlignment="Left" Margin="599,36,0,0" VerticalAlignment="Top" Width="169" SelectionChanged="cbFlightInfo_SelectionChanged"/>
         <Label Content="Choose Flight:" HorizontalAlignment="Left" Margin="503,34,0,0" VerticalAlignment="Top"/>
         <Label Content="Choose Passenger:" HorizontalAlignment="Left" Margin="479,85,0,0" VerticalAlignment="Top"/>
@@ -28,7 +87,7 @@
                         </Paragraph>
                     </FlowDocument>
                 </RichTextBox>
-                <RichTextBox Margin="10,10,0,0" Background="#FF0050FF" Height="47" Width="47" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2">
+                <RichTextBox Margin="10,10,0,0" Height="47" Width="47" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Background= "RoyalBlue">
                     <FlowDocument>
                         <Paragraph>
                             <Run/>

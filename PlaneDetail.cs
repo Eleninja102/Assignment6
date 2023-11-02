@@ -28,6 +28,10 @@ namespace Assignment6
         {
             return flightNumber + " - " + name;
         }
+        public string getPlaneName()
+        {
+            return name;
+        }
         public List<string> getPassangerName()
         {
             List<string> x = new List<string>();
@@ -51,5 +55,18 @@ namespace Assignment6
             }
             return -1;
         }
+
+        public string getSeatColor(string seat)
+        {
+            bool res = int.TryParse(seat, out int seatNum);
+
+            if (!seatDetail.ContainsValue(seatNum))
+            {
+                return "blue";
+            }
+
+            return "red";
+        }
+
     }
 }

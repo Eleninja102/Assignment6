@@ -23,6 +23,35 @@ namespace Assignment6
         public Boeing_767()
         {
             InitializeComponent();
+            foreach (Control control in gdSeatLayoutBoeing767.Children)
+            {
+                if (control is Label)
+                {
+                    string color = planeControl.getSeatColor(control.Name);
+                    if (color == "blue")
+                    {
+                        control.Background = Brushes.RoyalBlue;
+                    }else if(color == "red")
+                    {
+                        control.Background = Brushes.Red;
+                    }
+                    else if(color == "green"){
+                        control.Background= Brushes.Green;
+                    }
+                }
+            }
+        }
+
+        public void activePassenger(int seatNum)
+        {
+            foreach (Control control in gdSeatLayoutBoeing767.Children)
+            {
+                if(control.Name == "seat" + seatNum)
+                {
+                    control.Background = Brushes.Green;
+                    return;
+                }
+            }
         }
     }
 }

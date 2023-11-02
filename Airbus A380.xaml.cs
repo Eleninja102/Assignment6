@@ -23,6 +23,19 @@ namespace Assignment6
         public Airbus_A380()
         {
             InitializeComponent();
+
+            foreach(Control control in seatLayout.Children)
+            {
+                if(control is Label)
+                {
+                    string color = planeControl.getSeatColor(control.Name);
+                }
+            }
+        }
+
+        private void cmdSeatPressed(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

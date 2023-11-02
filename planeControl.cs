@@ -72,5 +72,15 @@ namespace Assignment6
             return activePlane.getSeatNumber(passengerName);
         }
 
+        public static string getPlaneName()
+        {
+            return activePlane.getPlaneName();
+        }
+
+        public static string getSeatColor(string seatLabelName)
+        {
+            return activePlane.getSeatColor(seatLabelName);
+        }
+
     }
 }

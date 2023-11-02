@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Assignment6
 {
     /// <summary>
-    /// Interaction logic for MainFrontScreen.xaml
+    /// Interaction logic for newPassengerForm.xaml
     /// </summary>
-    public partial class MainFrontScreen : Page
+    public partial class newPassengerForm : Window
     {
-        public MainFrontScreen()
+        public newPassengerForm()
         {
             InitializeComponent();
         }
