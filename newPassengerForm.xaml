@@ -10,7 +10,7 @@
         <Label Content="Enter the Passenger's Name" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,35,0,0" FontWeight="Bold" FontSize="24"/>
         <Label Content="First Name:" HorizontalAlignment="Left" Margin="47,103,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label Content="Last Name:" HorizontalAlignment="Left" Margin="47,152,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Margin="160,107,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Margin="160,107,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="16"/>
         <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Margin="160,156,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="16"/>
         <Button x:Name="buttonSave" Content="Save" HorizontalAlignment="Left" Margin="69,235,0,0" VerticalAlignment="Top" Height="33" Width="90" FontSize="16" Click="buttonSave_Click"/>
         <Button x:Name="buttonCancel" Content="Cancel" Margin="224,235,0,0" VerticalAlignment="Top" Height="33" FontSize="16" HorizontalAlignment="Left" Width="90" Click="buttonCancel_Click"/>

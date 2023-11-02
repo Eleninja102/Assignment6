@@ -1,16 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Assignment6
 {
@@ -21,17 +11,62 @@ namespace Assignment6
     {
         public newPassengerForm()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
+
+            }
         }
 
         private void buttonSave_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
+
+            try
+            {
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                //Just throw the exception
+                HandleError(MethodInfo.GetCurrentMethod().DeclaringType.Name, MethodInfo.GetCurrentMethod().Name, ex.Message);
+            }
         }
 
         private void buttonCancel_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
+
+            try
+            {
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                //Just throw the exception
+                HandleError(MethodInfo.GetCurrentMethod().DeclaringType.Name, MethodInfo.GetCurrentMethod().Name, ex.Message);
+            }
+
+        }
+
+
+
+
+        private void HandleError(string sClass, string sMethod, string sMessage)
+        {
+            try
+            {
+                //Would write to a file or database here.
+                MessageBox.Show(sClass + "." + sMethod + " -> " + sMessage);
+            }
+            catch (Exception ex)
+            {
+                System.IO.File.AppendAllText("C:\\Error.txt", Environment.NewLine +
+                                             "HandleError Exception: " + ex.Message);
+            }
         }
     }
 }

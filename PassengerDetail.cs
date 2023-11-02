@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 
 namespace Assignment6
 {
@@ -15,24 +12,51 @@ namespace Assignment6
 
         public PassengerDetail(int id, string firstName, string lastName, int? seatNumber = null)
         {
-            this.id = id;
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.seatNumber = seatNumber;
+
+            try
+            {
+                this.id = id;
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.seatNumber = seatNumber;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
+
+            }
         }
 
         public int? SeatNumber
         {
             get
             {
-                return seatNumber;
+
+                try
+                {
+                    return seatNumber;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
+
+                }
             }
         }
 
         public override string ToString()
         {
-            return firstName + " " + lastName;
+
+            try
+            {
+                return firstName + " " + lastName;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
+
+            }
         }
-        
+
     }
 }

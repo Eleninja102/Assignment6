@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 
 namespace Assignment6
 {
@@ -15,59 +13,119 @@ namespace Assignment6
 
         public PlaneDetail(int id, int flightNumber, string name)
         {
-            this.id = id;
-            this.flightNumber = flightNumber;
-            this.name = name;
+
+            try
+            {
+                this.id = id;
+                this.flightNumber = flightNumber;
+                this.name = name;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
+
+            }
         }
         public bool addPassenger(PassengerDetail passengerDetail)
         {
-            seatDetail.Add(passengerDetail);
-            return true;
+            try
+            {
+                seatDetail.Add(passengerDetail);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
+
+            }
         }
         public string getPlaneInfo()
         {
-            return flightNumber + " - " + name;
+            try
+            {
+                return flightNumber + " - " + name;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
+
+            }
         }
         public string getPlaneName()
         {
-            return name;
+            try
+            {
+                return name;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
+
+            }
         }
         public List<string> getPassangerName()
         {
-            List<string> x = new List<string>();
-            foreach(PassengerDetail passangerName in seatDetail)
+
+            try
             {
-                x.Add(passangerName.ToString());
+                List<string> x = new List<string>();
+                foreach (PassengerDetail passangerName in seatDetail)
+                {
+                    x.Add(passangerName.ToString());
+                }
+                return x;
             }
-            return x;
+            catch (Exception ex)
+            {
+                throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
+
+            }
         }
 
         public int? getSeatNumber(string passengerName)
         {
-            foreach (PassengerDetail passenger in seatDetail)
+
+            try
             {
-                if (passenger.ToString() == passengerName)
+                foreach (PassengerDetail passenger in seatDetail)
                 {
-                    return passenger.SeatNumber;
+                    if (passenger.ToString() == passengerName)
+                    {
+                        return passenger.SeatNumber;
+                    }
+
                 }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
 
             }
-            return -1;
         }
 
         public string getSeatColor(string seat)
         {
-            bool res = int.TryParse(seat, out int seatNum);
-            foreach (PassengerDetail passenger in seatDetail)
+
+            try
             {
-                if(passenger.SeatNumber == seatNum)
+                bool res = int.TryParse(seat, out int seatNum);
+                foreach (PassengerDetail passenger in seatDetail)
                 {
-                    return "red";
+                    if (passenger.SeatNumber == seatNum)
+                    {
+                        return "red";
+                    }
+
                 }
 
+                return "blue";
             }
+            catch (Exception ex)
+            {
+                throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
 
-            return "blue";
+            }
         }
 
     }
