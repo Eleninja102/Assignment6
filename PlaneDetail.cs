@@ -11,7 +11,7 @@ namespace Assignment6
         int id;
         int flightNumber;
         string name;
-        Dictionary<PassengerDetail, int> seatDetail = new();
+        List<PassengerDetail> seatDetail = new();
 
         public PlaneDetail(int id, int flightNumber, string name)
         {
@@ -19,9 +19,9 @@ namespace Assignment6
             this.flightNumber = flightNumber;
             this.name = name;
         }
-        public bool addPassenger(int seatNumber, PassengerDetail passengerDetail)
+        public bool addPassenger(PassengerDetail passengerDetail)
         {
-            seatDetail.Add(passengerDetail, seatNumber);
+            seatDetail.Add(passengerDetail);
             return true;
         }
         public string getPlaneInfo()
@@ -35,21 +35,20 @@ namespace Assignment6
         public List<string> getPassangerName()
         {
             List<string> x = new List<string>();
-            string y = seatDetail.Values.ToList().ToString();
-            foreach(PassengerDetail passangerName in seatDetail.Keys)
+            foreach(PassengerDetail passangerName in seatDetail)
             {
                 x.Add(passangerName.ToString());
             }
             return x;
         }
 
-        public int getSeatNumber(string passengerName)
+        public int? getSeatNumber(string passengerName)
         {
-            foreach (PassengerDetail passenger in seatDetail.Keys)
+            foreach (PassengerDetail passenger in seatDetail)
             {
                 if (passenger.ToString() == passengerName)
                 {
-                    return seatDetail.GetValueOrDefault(passenger);
+                    return passenger.SeatNumber;
                 }
 
             }
@@ -59,13 +58,16 @@ namespace Assignment6
         public string getSeatColor(string seat)
         {
             bool res = int.TryParse(seat, out int seatNum);
-
-            if (!seatDetail.ContainsValue(seatNum))
+            foreach (PassengerDetail passenger in seatDetail)
             {
-                return "blue";
+                if(passenger.SeatNumber == seatNum)
+                {
+                    return "red";
+                }
+
             }
 
-            return "red";
+            return "blue";
         }
 
     }

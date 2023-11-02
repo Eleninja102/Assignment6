@@ -8,20 +8,31 @@ namespace Assignment6
 {
     class PassengerDetail
     {
-        int id;
-        string firstname;
-        string lastname;
+        private int id;
+        private readonly string firstName;
+        private readonly string lastName;
+        private readonly int? seatNumber;
 
-        public PassengerDetail(int id, string firstname, string lastname)
+        public PassengerDetail(int id, string firstName, string lastName, int? seatNumber = null)
         {
             this.id = id;
-            this.firstname = firstname;
-            this.lastname = lastname;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.seatNumber = seatNumber;
+        }
+
+        public int? SeatNumber
+        {
+            get
+            {
+                return seatNumber;
+            }
         }
 
         public override string ToString()
         {
-            return firstname + " " + lastname;
+            return firstName + " " + lastName;
         }
+        
     }
 }

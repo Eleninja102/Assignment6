@@ -38,7 +38,7 @@ namespace Assignment6
                     string firstName = (string)dsPassenger.Tables[0].Rows[passenger]["First_Name"];
                     string lastName = (string)dsPassenger.Tables[0].Rows[passenger]["Last_Name"];
                     res = int.TryParse(dsPassenger.Tables[0].Rows[passenger]["Seat_Number"].ToString(), out int seatNumber);
-                    planes[plane].addPassenger(seatNumber, new PassengerDetail(passengerId, firstName, lastName));
+                    planes[plane].addPassenger(new PassengerDetail(passengerId, firstName, lastName, seatNumber));
                 }
             }
         }
@@ -67,7 +67,7 @@ namespace Assignment6
 
             return null;
         }
-        public static int getPassengerSeat(string passengerName)
+        public static int? getPassengerSeat(string passengerName)
         {
             return activePlane.getSeatNumber(passengerName);
         }
