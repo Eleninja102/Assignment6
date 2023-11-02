@@ -4,24 +4,21 @@ using System.Data;
 namespace Assignment6
 {
 
-    class planeControl
+    static class planeControl
     {
-        clsDataAccess db = new clsDataAccess();
+        private readonly static clsDataAccess db = new clsDataAccess();
+        private static DataSet dsPlane = new DataSet();
+        private static DataSet dsPassenger = new DataSet();
 
-        string sSQL;    //Holds an SQL statement
-        int iRetPlane = 0;   //Number of return values
-        DataSet dsPlane = new DataSet();
-        int iRetPassenger = 0;   //Number of return values
-        DataSet dsPassenger = new DataSet();
-        List<PlaneDetail> planes = new();
-        public planeControl()
+        private static List<PlaneDetail> planes = new();
+        private static PlaneDetail activePlane;
+        public static void setDatabase()
         {
+            int iRetPlane = 0;   //Number of return values
+            int iRetPassenger = 0;   //Number of return values
             string sSQL = "SELECT Flight_ID, Flight_Number, Aircraft_Type FROM FLIGHT";
             dsPlane = db.ExecuteSQLStatement(sSQL, ref iRetPlane);
 
-
-            int x = 0;
-            string y;
             for (int plane = 0; plane < iRetPlane; plane++)
             {
                 bool res;
@@ -43,15 +40,37 @@ namespace Assignment6
                     res = int.TryParse(dsPassenger.Tables[0].Rows[passenger]["Seat_Number"].ToString(), out int seatNumber);
                     planes[plane].addPassenger(seatNumber, new PassengerDetail(passengerId, firstName, lastName));
                 }
-
-
-
             }
-
-
         }
 
+        public static List<string> getPlaneDetails()
+        {
+            List<string> planeDetails = new List<string>();
+            foreach(PlaneDetail plane in planes)
+            {
+                planeDetails.Add(plane.getPlaneInfo());
+            }
+            return planeDetails;
+        }
 
+        public static List <string> getPassengerName(string planeDetails)
+        {
+            List<string> planePassengerNames= new List<string>();
+            foreach(PlaneDetail plane in planes)
+            {
+               if(planeDetails == plane.getPlaneInfo())
+                {
+                    activePlane = plane;
+                    return plane.getPassangerName();
+                }
+            }
+
+            return null;
+        }
+        public static int getPassengerSeat(string passengerName)
+        {
+            return activePlane.getSeatNumber(passengerName);
+        }
 
     }
 }

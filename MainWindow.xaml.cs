@@ -20,12 +20,31 @@ namespace Assignment6
     /// </summary>
     public partial class MainWindow : Window
     {
-        planeControl x;
         public MainWindow()
         {
             InitializeComponent();
-            x = new planeControl();
-
+            planeControl.setDatabase();
+            cbFlightInfo.ItemsSource = planeControl.getPlaneDetails();
         }
+
+
+        private void cbFlightInfo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string selected = e.AddedItems[0].ToString();
+            cbPassengerInfo.ItemsSource = planeControl.getPassengerName(selected);
+            cbPassengerInfo.IsEnabled = true;
+        }
+
+        private void cbPassengerInfo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count > 0)
+            {
+                string selected = e.AddedItems[0].ToString();
+                txtSeatNumber.Text = planeControl.getPassengerSeat(selected).ToString();
+                return;
+            }
+            txtSeatNumber.Text = "";
+        }
+
     }
 }

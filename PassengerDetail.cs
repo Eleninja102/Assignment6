@@ -18,5 +18,10 @@ namespace Assignment6
             this.firstname = firstname;
             this.lastname = lastname;
         }
+
+        public override string ToString()
+        {
+            return firstname + " " + lastname;
+        }
     }
 }
