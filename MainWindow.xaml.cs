@@ -21,14 +21,14 @@ namespace Assignment6
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        newPassengerForm passengerForm;
 
         public MainWindow()
         {
             InitializeComponent();
             planeControl.setDatabase();
             cbFlightInfo.ItemsSource = planeControl.getPlaneDetails();
-           //frameSeatLayout.Source = new Uri("Boeing 767.xaml", UriKind.Relative);
+            gdSeatLayoutBoeing767.Visibility = Visibility.Hidden;
         }
 
 
@@ -49,6 +49,9 @@ namespace Assignment6
                 setSeatColors(gdSeatLayoutAirbusA380);
             }
             cbPassengerInfo.IsEnabled = true;
+            buttonAddPassenger.IsEnabled = true;
+            buttonChangeSeat.IsEnabled = true;
+            buttonRemovePassenger.IsEnabled = true;
         }
 
         private void setSeatColors(Grid gdName)
@@ -101,13 +104,21 @@ namespace Assignment6
             {
                 if(control.Content.ToString() == seat)
                 {
-                    control.Background = Brushes.Green;
+                    control.Background = Brushes.LimeGreen;
                     txtSeatNumber.Text = seat;
                     return;
                 }
 
             }
         }
+
+        private void buttonAddPassenger_Click(object sender, RoutedEventArgs e)
+        {
+            passengerForm = new newPassengerForm();
+            passengerForm.ShowDialog();
+
+        }
+
 
     }
 }

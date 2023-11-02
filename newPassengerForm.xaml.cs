@@ -23,5 +23,15 @@ namespace Assignment6
         {
             InitializeComponent();
         }
+
+        private void buttonSave_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void buttonCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+        }
     }
 }
