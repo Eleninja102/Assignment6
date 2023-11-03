@@ -6,23 +6,35 @@ using System.Reflection;
 namespace Assignment6
 {
 
+    /// <summary>
+    /// A static method that holds the lists and helps control everything
+    /// </summary>
     static class planeControl
     {
-        private readonly static clsDataAccess db = new clsDataAccess();
-        private static DataSet dsPlane = new DataSet();
-        private static DataSet dsPassenger = new DataSet();
 
+        /// <summary>
+        /// The list of planes as a PlaneDetail
+        /// </summary>
         private static List<PlaneDetail> planes = new();
+        /// <summary>
+        /// The active plane if a plane has been selected
+        /// </summary>
         private static PlaneDetail? activePlane;
+        /// <summary>
+        /// Adds the sql info to the planes list and adds all the passengers to the list.
+        /// </summary>
+        /// <exception cref="Exception"></exception>
         public static void setDatabase()
         {
 
             try
             {
+                DataSet dsPlane = new();
+                DataSet dsPassenger = new();
                 int iRetPlane = 0;   //Number of return values
                 int iRetPassenger = 0;   //Number of return values
                 string sSQL = "SELECT Flight_ID, Flight_Number, Aircraft_Type FROM FLIGHT";
-                dsPlane = db.ExecuteSQLStatement(sSQL, ref iRetPlane);
+                dsPlane = clsDataAccess.ExecuteSQLStatement(sSQL, ref iRetPlane);
 
                 for (int plane = 0; plane < iRetPlane; plane++)
                 {
@@ -36,7 +48,7 @@ namespace Assignment6
               "WHERE FLIGHT.FLIGHT_ID = FLIGHT_PASSENGER_LINK.FLIGHT_ID AND " +
               "FLIGHT_PASSENGER_LINK.PASSENGER_ID = PASSENGER.PASSENGER_ID AND " +
               "FLIGHT.FLIGHT_ID =" + id;
-                    dsPassenger = db.ExecuteSQLStatement(sSQL, ref iRetPassenger);
+                    dsPassenger = clsDataAccess.ExecuteSQLStatement(sSQL, ref iRetPassenger);
                     for (int passenger = 0; passenger < iRetPassenger; passenger++)
                     {
                         int passengerId = (int)dsPassenger.Tables[0].Rows[passenger]["Passenger_ID"];
@@ -55,17 +67,17 @@ namespace Assignment6
             }
         }
 
-        public static List<string> getPlaneDetails()
+        /// <summary>
+        /// Returns the list of planes
+        /// </summary>
+        /// <returns>The list of planes and there details</returns>
+        /// <exception cref="Exception"></exception>
+        public static List<PlaneDetail> getPlaneDetails()
         {
 
             try
             {
-                List<string> planeDetails = new List<string>();
-                foreach (PlaneDetail plane in planes)
-                {
-                    planeDetails.Add(plane.getPlaneInfo());
-                }
-                return planeDetails;
+                return planes;  
             }
             catch (Exception ex)
             {
@@ -74,18 +86,23 @@ namespace Assignment6
             }
         }
 
-        public static List<string>? getPassengerName(string planeDetails)
+        /// <summary>
+        /// Gets the list of the passengers for a given plane.
+        /// </summary>
+        /// <param name="stPlaneName">The name of in "flightNumber - name" format</param>
+        /// <returns>A list of passengers will be null if no passengers exist</returns>
+        /// <exception cref="Exception"></exception>
+        public static List<PassengerDetail>? getPassengerName(string stPlaneName)
         {
 
             try
             {
-                List<string> planePassengerNames = new List<string>();
                 foreach (PlaneDetail plane in planes)
                 {
-                    if (planeDetails == plane.getPlaneInfo())
+                    if (stPlaneName == plane.ToString())
                     {
                         activePlane = plane;
-                        return plane.getPassangerName();
+                        return plane.getPassengerName();
                     }
                 }
 
@@ -97,11 +114,17 @@ namespace Assignment6
 
             }
         }
+        /// <summary>
+        /// Given a passengers name it will check if they have a seat number
+        /// </summary>
+        /// <param name="passengerName">The name of the passenger in "FirstName LastName" format</param>
+        /// <returns>The seat number if it exists</returns>
+        /// <exception cref="Exception"></exception>
         public static int? getPassengerSeat(string passengerName)
         {
             try
             {
-                return activePlane.getSeatNumber(passengerName);
+                return activePlane?.getSeatNumber(passengerName);
 
             }
             catch (Exception ex)
@@ -111,11 +134,16 @@ namespace Assignment6
             }
         }
 
-        public static string getPlaneName()
+        /// <summary>
+        /// The name of the plane if it exist (it always should)
+        /// </summary>
+        /// <returns>The name of the plane</returns>
+        /// <exception cref="Exception"></exception>
+        public static string? getPlaneName()
         {
             try
             {
-                return activePlane.getPlaneName();
+                return activePlane?.getPlaneName();
 
             }
             catch (Exception ex)
@@ -125,11 +153,17 @@ namespace Assignment6
             }
         }
 
-        public static string getSeatColor(string seatLabelName)
+        /// <summary>
+        /// Will get the color of the seat given an active plane (can be null but in practice never will be)
+        /// </summary>
+        /// <param name="seatLabelContent">The content of the seat should be an int as it will get parsed 1,2,3</param>
+        /// <returns>The color the seat should be red, blue, green</returns>
+        /// <exception cref="Exception"></exception>
+        public static string? getSeatColor(string seatLabelContent)
         {
             try
             {
-                return activePlane.getSeatColor(seatLabelName);
+                return activePlane?.getSeatColor(seatLabelContent);
 
             }
             catch (Exception ex)

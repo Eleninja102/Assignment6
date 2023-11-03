@@ -4,13 +4,34 @@ using System.Reflection;
 
 namespace Assignment6
 {
+    /// <summary>
+    /// The deatils of the plane and all the passengers on the plane
+    /// </summary>
     class PlaneDetail
     {
+        /// <summary>
+        /// The id of the plane from the database
+        /// </summary>
         int id;
+        /// <summary>
+        /// The flight number from the database 
+        /// </summary>
         int flightNumber;
+        /// <summary>
+        /// The name of the plane
+        /// </summary>
         string name;
+        /// <summary>
+        /// The details of the passengers on the plane type passengerDetail
+        /// </summary>
         List<PassengerDetail> seatDetail = new();
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id">The unique id of the plane d</param>
+        /// <param name="flightNumber">The flight number as an int</param>
+        /// <param name="name">The name of the plane</param>
+        /// <exception cref="Exception"></exception>
         public PlaneDetail(int id, int flightNumber, string name)
         {
 
@@ -26,6 +47,12 @@ namespace Assignment6
 
             }
         }
+        /// <summary>
+        /// Adds the passenger from the passenger data and adds them to the flight
+        /// </summary>
+        /// <param name="passengerDetail"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public bool addPassenger(PassengerDetail passengerDetail)
         {
             try
@@ -39,7 +66,12 @@ namespace Assignment6
 
             }
         }
-        public string getPlaneInfo()
+        /// <summary>
+        /// Gets the flight number and name overrides tostring method
+        /// </summary>
+        /// <returns>flightNumber - name</returns>
+        /// <exception cref="Exception"></exception>
+        public override string ToString()
         {
             try
             {
@@ -50,7 +82,14 @@ namespace Assignment6
                 throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
 
             }
+
         }
+        
+        /// <summary>
+        /// The name of the plane
+        /// </summary>
+        /// <returns>name</returns>
+        /// <exception cref="Exception"></exception>
         public string getPlaneName()
         {
             try
@@ -63,17 +102,18 @@ namespace Assignment6
 
             }
         }
-        public List<string> getPassangerName()
+        /// <summary>
+        /// Returns the list of passengers
+        /// </summary>
+        /// <returns>A list of passengers run tostring to get names</returns>
+        /// <exception cref="Exception"></exception>
+        public List<PassengerDetail> getPassengerName()
         {
 
             try
             {
-                List<string> x = new List<string>();
-                foreach (PassengerDetail passangerName in seatDetail)
-                {
-                    x.Add(passangerName.ToString());
-                }
-                return x;
+
+                return seatDetail;
             }
             catch (Exception ex)
             {
@@ -81,7 +121,13 @@ namespace Assignment6
 
             }
         }
-
+        
+        /// <summary>
+        /// Get the seat number of the passenger based on name
+        /// </summary>
+        /// <param name="passengerName">The name of the given passenger</param>
+        /// <returns>The respective seat number as int else null</returns>
+        /// <exception cref="Exception"></exception>
         public int? getSeatNumber(string passengerName)
         {
 
@@ -103,7 +149,12 @@ namespace Assignment6
 
             }
         }
-
+        /// <summary>
+        /// Taken a seat number as string and returns whether someone is sitting there as red or blue
+        /// </summary>
+        /// <param name="seat">the content of the seat 1,2,3</param>
+        /// <returns>red or blue depending on if taken</returns>
+        /// <exception cref="Exception"></exception>
         public string getSeatColor(string seat)
         {
 

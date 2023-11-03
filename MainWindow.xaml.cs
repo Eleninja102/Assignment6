@@ -11,8 +11,14 @@ namespace Assignment6
     /// </summary>
     public partial class MainWindow : Window
     {
-        newPassengerForm passengerForm;
-
+        /// <summary>
+        /// The screen to add a new passenger
+        /// </summary>
+        private newPassengerForm? passengerForm;
+        /// <summary>
+        /// Creates the main window and everything in it 
+        /// </summary>
+        /// <exception cref="Exception"></exception>
         public MainWindow()
         {
 
@@ -30,7 +36,11 @@ namespace Assignment6
             }
         }
 
-
+        /// <summary>
+        /// Gets the correct list of the planes and updates the grid and passenger list. Enables the screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbFlightInfo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -63,6 +73,11 @@ namespace Assignment6
             }
         }
 
+        /// <summary>
+        /// Updates all the seat colors to blue or red or green given the table. Passes all the label content 
+        /// </summary>
+        /// <param name="gdName"></param>
+        /// <exception cref="Exception"></exception>
         private void setSeatColors(Grid gdName)
         {
 
@@ -71,7 +86,7 @@ namespace Assignment6
                 foreach (Label control in gdName.Children)
                 {
 
-                    string color = planeControl.getSeatColor(control.Content.ToString());
+                    string? color = planeControl.getSeatColor(control.Content.ToString());
                     if (color == "blue")
                     {
                         control.Background = Brushes.RoyalBlue;
@@ -93,16 +108,19 @@ namespace Assignment6
 
             }
         }
-
+        /// <summary>
+        /// Loads the list of passengers from the correct list 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbPassengerInfo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
             try
             {
                 if (e.AddedItems.Count > 0)
                 {
-                    string selected = e.AddedItems[0].ToString();
-                    string name = planeControl.getPlaneName();
+                    string? selected = e.AddedItems[0]?.ToString();
+                    string? name = planeControl.getPlaneName();
                     if (name == "Boeing 767")
                     {
                         setSeatColors(gdSeatLayoutBoeing767);
@@ -125,6 +143,12 @@ namespace Assignment6
             }
         }
 
+        /// <summary>
+        /// Takes the grid and seat number and set the color green
+        /// </summary>
+        /// <param name="gdName">The onscreen grid</param>
+        /// <param name="seat">The seat number</param>
+        /// <exception cref="Exception"></exception>
         private void setSelectedSeatColor(Grid gdName, string seat)
         {
 
@@ -148,6 +172,11 @@ namespace Assignment6
             }
         }
 
+        /// <summary>
+        /// When the new passenger button is pressed show a new form while leaving the old one
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonAddPassenger_Click(object sender, RoutedEventArgs e)
         {
 
@@ -171,6 +200,12 @@ namespace Assignment6
 
 
 
+        /// <summary>
+        /// Takes the given error from the entire program and prints a message box with the error. Also creates a txt file
+        /// </summary>
+        /// <param name="sClass">The last class used</param>
+        /// <param name="sMethod"> The last method used</param>
+        /// <param name="sMessage">The last message error sent</param>
         private void HandleError(string sClass, string sMethod, string sMessage)
         {
             try
