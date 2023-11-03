@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="ReservationSystem.mdb" />
+    <Resource Include="Access\ReservationSystem.mdb" />
   </ItemGroup>
 
 </Project>
